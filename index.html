@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+      body{
+        position: relative;
+      }
+      #main{
+        height: 700px;
+      }
+      .col{
+        position:absolute;
+        width: 40%;
+      }
+      .left{
+        margin-top: 10px;
+        float: left;  
+        width: 750px;  
+      }
+      .right{
+        float: right;
+        width: 33%;
+      }
+      #sel{
+        overflow: scroll;
+        height: 500px;
+        float: left;
+      }
+      .modal-content{
+        color: black;
+        text-align: left;
+      }
+      .title{
+        color:black;
+      }
+    </style>
+    
+  </head>
+  <body class="container">
+      
+    <!-- 내비게이션 -->
+    <div id="nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <img src="뽀로로.png" class="img-fluid" alt="..." width="60"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    캐릭터 소개
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#Pororo" role="button" aria-controls="offcanvasExample">
+                      뽀로로
+                    </a></li>
+                    <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#Crong" role="button" aria-controls="offcanvasExample">
+                      크롱
+                    </a></li>
+                    <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#Patty" role="button" aria-controls="offcanvasExample">
+                      패티
+                    </a></li>
+                    <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#Rupee" role="button" aria-controls="offcanvasExample">
+                      루피
+                    </a></li>
+                    <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#FourBee" role="button" aria-controls="offcanvasExample">
+                      포비
+                    </a></li>
+                    <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#Harry" role="button" aria-controls="offcanvasExample">
+                      해리
+                    </a></li>
+                    <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#Eddie" role="button" aria-controls="offcanvasExample">
+                      에디
+                    </a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">마을소개</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">마을생활</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <!-- 드롭다운 로그인 -->
+        <div class="dropdown">
+          <button id="dLabel" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </button>
+          <div class="dropdown-menu">
+            <form class="px-4 py-3">
+              <div class="mb-3">
+                <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+              </div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                  <label class="form-check-label" for="dropdownCheck">
+                    Remember me
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">New around here? Sign up</a>
+            <a class="dropdown-item" href="#">Forgot password?</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+      <!-- 오프캔버스 -->
+      <div class="introduce">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="Pororo" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              <div class="card-group">
+                <div class="card">
+                  <img src="https://static.ebs.co.kr/images/public/lectures/2014/06/19/10/bhpImg/44deb98d-1c50-4073-9bd7-2c2c28d65f9e.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">뽀로로</h5>
+                    <p class="card-text">뭐든지 궁금한 건 참지 못하고 직점 해보고야마는 성격으로, 항상 새로운 일에 씩씩하게 도전하는 용감한 친구예요.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="Crong" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              <div class="card">
+                <img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723212878_bxr2reBk9w.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">크롱</h5>
+                  <p class="card-text">항상 뽀로로를 따라다니며 말썽을 부리는 사고뭉치지만, 아직은 알고 싶은 것도 많고 하고 싶은 것도 많은 귀여운 막내랍니다.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="Patty" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              <div class="card">
+                <img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723588618_dphGgSgOAp.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">패티</h5>
+                  <p class="card-text">명량한 성격에 리더십이 강한 패티는 다른 친구들보다 운동을 잘해서 친구들이 모두 부러워한합니다.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="Rupee" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <div class="card">
+              <img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723572507_BOtiBfIuyL.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">루피</h5>
+                <p class="card-text">요리하기를 좋아하는 상냥한 성격의 루피는 친구들과 맛있는 음식을 나누어 먹는 것을 가장 좋아합니다.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="FourBee" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <div class="card">
+              <img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723602807_VcCnrrJwzW.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">포비</h5>
+                <p class="card-text">커다란 덩치만큼 마음도 넓어 친구들이 어려울 떄마다 제일 먼저 도와주는 마음씨 착한 친구랍니다.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="Harry" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <div class="card">
+              <img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723549377_49L83YjvJL.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">해리</h5>
+                <p class="card-text">눈치가 없어 친구들을 곤란에 빠트리기도 하지만, 특유의 밝고 명량한 분위기로 친구들을 즐겁게 만들어 준답니다.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="Eddie" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <div class="card">
+              <img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723513396_kp9fgpCfTO.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">에디</h5>
+                <p class="card-text">에디가 만들어 내는 발명품들은 항상크고 작은 사건을 일으키지만, 친구들에게 멋진 추억을 안겨 준답니다.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+
+    <!-- 슬라이드 -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="단체1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="단체2.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="title">뽀로로 친구들 인기투표를 해보세요!!</h2>
+            <!--모달-->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">인기투표를 해보세요! </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!--체크박스-->
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    뽀로로
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                  <label class="form-check-label" for="flexCheckChecked">
+                    크롱
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    패티
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    루피
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    포비
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    해리
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    에디
+                  </label>
+                </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2">인기투표 결과</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!--프로그레스-->
+            1등 루피<div class="progress">
+             <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">65%</div>
+            </div>
+            2등 크롱<div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">10%</div>
+            </div>
+            3등 뽀로로<div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 5%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">5%</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><인기투표></a>
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="main">
+      <div class="container">
+        <!-- 스크롤스파이 -->
+        <div id="sco" class="left">
+          <div class="row">
+            <div class="col">
+              <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-item-1">슈퍼썰매 대모험</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">눈요정 마을 대모험</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">컴퓨터 왕국 대모험</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">공룡섬 대모험</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-5">보물섬 대모험</a>
+              </div>
+            </div>
+            <div id="sel" class="col">
+              <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                <div class="wid">
+                  <h4 id="list-item-1">슈퍼썰매 대모험</h4>
+                  <p>개봉년도 : 2013</p>
+                  <h4 id="list-item-2">눈요정 마을 대모험</h4>
+                  <p>개봉년도 : 2014</p>
+                  <h4 id="list-item-3">컴퓨터 왕국 대모험</h4>
+                  <p>개봉년도 : 2015</p>
+                  <h4 id="list-item-4">공룡섬 대모험</h4>
+                  <p>개봉년도 : 2017</p>
+                  <h4 id="list-item-5">보물섬 대모험</h4>
+                  <p>개봉년도 : 2019</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 아코디언 -->
+        <div class="right">
+            
+            <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Accordion Item #1
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+      <!--테이블-->
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">바다낚시대회</th>
+            <th scope="col">그림그리기대회</th>
+            <th scope="col">요리대회</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>해리</td>
+            <td>포비</td>
+            <td>패티</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>포비</td>
+            <td>뽀로로</td>
+            <td>에디</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>루피</td>
+            <td>패티</td>
+            <td>크롱</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    <!-- 페이지네이션, 위치 고정 --> 
+    <div class="fixed-bottom"><nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#nav">1</a></li>
+        <li class="page-item"><a class="page-link" href="#main">2</a></li>
+        <li class="page-item"><a class="page-link" href="#footer">3</a></li>
+      </ul>
+    </nav></div>
+
+    <footer id="footer">
+      <!-- 카드 색 --> 
+      카드
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
